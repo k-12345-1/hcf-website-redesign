@@ -434,6 +434,21 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
 /* real brand glyphs, not lettered badges */
 .footer-col .icon{width:.95rem;height:.95rem;flex:0 0 auto;display:block;fill:currentColor;}
 .footer-bottom{padding:2rem 0 2.5rem;text-align:center;font-size:.92rem;color:rgba(255,255,255,.75);}
+
+/* ---- phone layout fixes ---- */
+@media (max-width:700px){
+  /* the overlay arrows sit on top of the card text once a card is nearly
+     full-width; the rail is swipeable, and Pause still stops the autoplay */
+  .rail-nav{display:none;}
+  /* let section headings take the full width instead of being squeezed
+     into a narrow column beside their stepper buttons */
+  .quote-head{flex-direction:column;align-items:flex-start;gap:.9rem;}
+  .rail-head{flex-direction:column;align-items:flex-start;gap:.9rem;}
+  /* WCAG 2.5.8: 24px minimum target */
+  .event-card .more{padding:.35rem 0;}
+  /* tighten the stacked cards so the section is not one long crimson wall */
+  .built-card{padding:1.35rem 1.25rem;}
+}
 </style>
 
 <div class="utility">
