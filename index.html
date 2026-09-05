@@ -1,4 +1,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Reveal-on-scroll is progressive: this class hides the elements Motion is about
+   to animate, and a failsafe clears it if the library never loads, so the page
+   is never left blank behind a missing CDN. */
+(function(){
+  var r = document.documentElement;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  r.classList.add("anim-pending");
+  window.__animFailsafe = setTimeout(function(){ r.classList.remove("anim-pending"); }, 2500);
+})();
+</script>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
 <title>Harvard College Fund, Rebuilt</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,7 +97,7 @@ a{color:inherit;}
 }
 .band-hero .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:3rem;padding:5.5rem 1.5rem;flex-wrap:nowrap;}
 .hero-copy{flex:0 1 auto;min-width:0;}
-.hero-copy h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.5rem,4vw,3.4rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 .65rem;white-space:nowrap;}
+.hero-copy h1{font-family:var(--serif);font-weight:700;font-size:2.5rem;line-height:1.15;margin:0 0 .65rem;white-space:nowrap;}
 .hero-copy .lead{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.25rem;margin:0 0 1.75rem;color:rgba(255,255,255,.95);}
 .btn{
   display:inline-block;
@@ -130,21 +141,19 @@ a{color:inherit;}
 .side-nav li a:hover{color:var(--crimson-deep);border-left-color:var(--crimson-deep);}
 article p{margin:0 0 1.3rem;max-width:44rem;font-size:1.12rem;line-height:1.65;}
 
-/* ---- section heads: one serif display voice at a real size, the way
-   harvard.edu/campus sets every section title ---- */
+/* ---- section eyebrow / header style, matches the real page's h2.h4 ---- */
 h2.section-head{
-  font-family:var(--serif);font-weight:700;
-  font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.15;
-  letter-spacing:-.02em;text-transform:none;margin:0 0 .45rem;color:var(--ink);
+  font-family:var(--sans);font-weight:500;font-size:1.15rem;
+  letter-spacing:-.01em;text-transform:uppercase;margin:0 0 .3rem;
 }
-.section-sub{color:var(--mut);margin:0 0 1.5rem;font-size:1.08rem;line-height:1.55;max-width:42rem;}
+.section-sub{color:var(--mut);margin:0 0 1.5rem;font-size:1.05rem;}
 
 /* ---- quote band: one-at-a-time carousel with arrow steppers and a
    directional slide-in on change (same pattern as the FOP Alumni site's
    "Hear from the students" testimonials) ---- */
 .band-quotes{background:var(--panel);color:var(--ink);padding:4.5rem 0;overflow:hidden;}
 .quote-head{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-bottom:1.75rem;}
-.quote-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.15;letter-spacing:-.02em;margin:0;}
+.quote-head h2{font-family:var(--serif);font-weight:700;font-size:1.5rem;margin:0;}
 .quote-arrows{display:flex;gap:.6rem;flex:0 0 auto;}
 .quote-arrows button{
   width:2.75rem;height:2.75rem;border-radius:8px;border:1.5px solid var(--rule);
@@ -178,8 +187,8 @@ h2.section-head{
 }
 @media (max-width:860px){.built-head{grid-template-columns:1fr;gap:1.5rem;}}
 .built-head h2{
-  font-family:var(--serif);font-weight:700;
-  font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.08;letter-spacing:-.02em;
+  font-family:var(--sans);font-weight:700;
+  font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.03;letter-spacing:-.03em;
   margin:0;text-wrap:balance;color:var(--ink);
 }
 .built-head p{margin:.4rem 0 0;font-size:1.02rem;line-height:1.6;color:var(--ink);}
@@ -249,7 +258,7 @@ h2.section-head{
    sans used for the other section heads */
 .band-decades .section-head{
   font-family:var(--serif);font-weight:700;text-transform:none;letter-spacing:normal;
-  font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.2;margin:0 0 .6rem;text-align:center;
+  font-size:clamp(1.5rem,2.6vw,2.05rem);line-height:1.2;margin:0 0 .6rem;text-align:center;
 }
 .band-decades .section-sub{text-align:center;font-size:1.1rem;margin-bottom:0;}
 
@@ -392,7 +401,7 @@ h2.section-head{
 }
 .why-grid h2{
   font-family:var(--serif);font-weight:700;margin:0 0 1rem;
-  font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.15;letter-spacing:-.02em;
+  font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.18;
 }
 .why-grid p{margin:0 0 1rem;font-size:1.02rem;line-height:1.6;color:var(--ink);}
 .why-grid p:last-child{margin-bottom:0;}
@@ -510,18 +519,25 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
   vertical-align:middle;
 }
 
-/* ---- Voices on near-black, the way harvard.edu/campus sets its quote block.
-   Their palette runs light #F3F4F4 against near-black #0E0E0E with nothing
-   in between; this is the one band on our page that carries that. ---- */
-.band-quotes{background:#0E0E0E;color:#F3F4F4;}
-.band-quotes .quote-head h2{color:#F3F4F4;}
-.quote-card{background:transparent;border-radius:0;padding:1.5rem 0 0;}
-.quote-card p.q{color:#F3F4F4;font-size:clamp(1.25rem,2.3vw,1.75rem);line-height:1.4;}
-.quote-card p.attr{color:rgba(243,244,244,.68);}
-.quote-card .mark{color:#F3F4F4;opacity:.55;}
-.band-quotes .quote-arrows button{border-color:rgba(243,244,244,.4);color:#F3F4F4;}
-.band-quotes .quote-arrows button:hover{background:#F3F4F4;color:#0E0E0E;border-color:#F3F4F4;}
-.band-quotes .quote-arrows button:focus-visible{outline:2px solid #F3F4F4;outline-offset:2px;}
+
+.anim-pending [data-reveal]{opacity:0;}
+@media (prefers-reduced-motion:reduce){.anim-pending [data-reveal]{opacity:1;}}
+
+/* ---- hover detail. The arrow and the photo move; the target itself stays
+   put, so no button shifts under the cursor. ---- */
+.bi-arrow{transition:transform 260ms cubic-bezier(.16,1,.3,1);}
+.built-item:hover .bi-arrow,
+.built-item:focus-visible .bi-arrow{transform:translateX(6px);}
+.decade-card.photo img{transition:transform 450ms cubic-bezier(.16,1,.3,1);transform-origin:center;}
+.decade-card.photo:hover img{transform:scale(1.04);}
+.event-card{transition:box-shadow 320ms cubic-bezier(.16,1,.3,1);}
+.event-card:hover{box-shadow:0 10px 28px rgba(33,37,41,.13);}
+.inv-link,.mp-link{transition:border-color 200ms ease;}
+@media (prefers-reduced-motion:reduce){
+  .bi-arrow,.decade-card.photo img,.event-card{transition:none;}
+  .built-item:hover .bi-arrow{transform:none;}
+  .decade-card.photo:hover img{transform:none;}
+}
 </style>
 
 <div class="utility">
@@ -1147,4 +1163,92 @@ document.querySelectorAll("[data-scroll]").forEach(function(btn){
     rail.scrollBy({left: dir * step, behavior: "instant"});
   });
 });
+</script>
+
+<script type="module">
+/* ---------------------------------------------------------------------------
+   Motion (motion.dev) drives the scroll choreography: staggered reveals as each
+   band comes into view, plus the hero settling in on load.
+
+   Loaded as the vanilla ES module, not Motion for React: these pages are static
+   HTML with no React and no build step. Same animation engine, no framework.
+
+   Hover states are plain CSS transitions rather than JS, so they work whether or
+   not this module ever loads.
+
+   Nothing here can leave content hidden. Anything already on screen animates
+   immediately instead of waiting on an observer, and a failsafe reveals whatever
+   is still hidden after five seconds.
+   --------------------------------------------------------------------------- */
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const root = document.documentElement;
+const clearGuard = () => { clearTimeout(window.__animFailsafe); root.classList.remove("anim-pending"); };
+
+function revealAll() {
+  document.querySelectorAll("[data-reveal]").forEach(el => {
+    if (parseFloat(getComputedStyle(el).opacity) < 0.99) {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    }
+  });
+}
+
+if (reduce) {
+  clearGuard();
+} else {
+  try {
+    const { animate, inView, stagger } = await import("https://cdn.jsdelivr.net/npm/motion@11/+esm");
+
+    const EASE = [0.16, 1, 0.3, 1];
+    const GROUPS = [
+      [".band-intro article > *", 0.05],
+      [".built-head > *", 0.06],
+      [".built-list li", 0.035],
+      [".why-grid > div > *", 0.05],
+      [".stat", 0.08],
+      [".band-decades > .wrap:first-of-type > *", 0.06],
+      [".decade-rail", 0],
+      [".quote-head, .quote-stage", 0.08],
+      [".closing-note p", 0.08],
+      [".band-events .rail-head > *", 0.06],
+      [".events-rail", 0],
+      [".contact-grid > div", 0.06]
+    ];
+
+    const show = (els, step) => animate(
+      els,
+      { opacity: [0, 1], y: [14, 0] },
+      { duration: 0.62, ease: EASE, delay: step ? stagger(step) : 0 }
+    ).finished.then(() => els.forEach(el => { el.style.willChange = "auto"; })).catch(() => {});
+
+    for (const [sel, step] of GROUPS) {
+      const els = [...document.querySelectorAll(sel)];
+      if (!els.length) continue;
+
+      const onScreen = els[0].getBoundingClientRect().top < window.innerHeight * 0.92;
+      els.forEach(el => {
+        el.setAttribute("data-reveal", "");
+        el.style.willChange = "opacity, transform";
+        if (!onScreen) { el.style.opacity = "0"; el.style.transform = "translateY(14px)"; }
+      });
+
+      if (onScreen) { show(els, step); continue; }
+
+      const anchor = els[0].closest("section, .content-shell, .page-body") || els[0];
+      let fired = false;
+      inView(anchor, () => { if (!fired) { fired = true; show(els, step); } }, { amount: 0.12 });
+    }
+
+    clearGuard();
+    setTimeout(revealAll, 5000);
+
+    const hero = [...document.querySelectorAll(".hero-copy > *")];
+    if (hero.length) animate(hero, { opacity: [0, 1], y: [18, 0] },
+                             { duration: 0.7, ease: EASE, delay: stagger(0.08) });
+  } catch (err) {
+    clearGuard();
+    revealAll();
+    console.warn("Motion unavailable, reveals skipped:", err);
+  }
+}
 </script>
