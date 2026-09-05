@@ -417,6 +417,7 @@ h2.section-head{
 .band-contact{background:var(--crimson-deep);color:#fff;padding:4.5rem 0 4rem;}
 .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto auto;gap:2.25rem;}
 .contact-grid > div{display:grid;grid-row:span 3;grid-template-rows:subgrid;align-content:start;gap:0;}
+.contact-grid > div > *{align-self:start;}
 @media (max-width:1000px){.contact-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem;}}
 @media (max-width:760px){.contact-grid{grid-template-columns:1fr;}}
 .band-contact h3{font-family:var(--serif);font-weight:700;font-size:1.35rem;margin:0 0 .6rem;}

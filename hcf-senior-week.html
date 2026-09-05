@@ -409,7 +409,10 @@ h2.section-head{
 
 /* ---- contact band ---- */
 .band-contact{background:var(--crimson-deep);color:#fff;padding:4.5rem 0 4rem;}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto auto;gap:2.25rem;}
+@media (max-width:1000px){.contact-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem;}}
+.contact-grid > div{display:grid;grid-row:span 3;grid-template-rows:subgrid;align-content:start;gap:0;}
+.contact-grid > div > *{align-self:start;}
 @media (max-width:760px){.contact-grid{grid-template-columns:1fr;}}
 .band-contact h3{font-family:var(--serif);font-weight:700;font-size:1.35rem;margin:0 0 .6rem;}
 .band-contact p{color:var(--on-crimson-mut);margin:0 0 1.1rem;font-size:1rem;line-height:1.5;}
@@ -609,10 +612,9 @@ table.staff a:hover{text-decoration:underline;}
           <p class="story-eyebrow">Made Possible story</p>
           <div class="story-media" aria-hidden="true"><span class="story-play">&#9658;</span><span class="story-cap">Story in production</span></div>
           <div class="story-body">
-            <h3>Athletic facilities, and Senior Week events</h3>
+            <h3>Senior Week</h3>
             <p class="story-when">May 2027</p>
             <p>Released in May, during Senior Week itself.</p>
-            <p class="story-with"><span>With</span> Harvard Recreation, and the Program Marshals</p>
           </div>
         </div>
       </div>
@@ -630,6 +632,14 @@ table.staff a:hover{text-decoration:underline;}
       <h3>Staff Directory</h3>
       <p>You can find staff contact information in the Harvard College Fund staff directory.</p>
       <div class="pills"><a class="pill" href="hcf-staff-directory.html">HCF Staff Directory</a></div>
+    </div>
+    <div>
+      <h3>Get Involved</h3>
+      <p>Volunteer with your class, join a giving society, or become an Associate.</p>
+      <div class="pills">
+        <a class="pill" href="https://alumni.harvard.edu/college/volunteer-fundraising">Volunteer with the Fund</a>
+        <a class="pill" href="hcf-associates.html">Associates</a>
+      </div>
     </div>
     <div>
       <h3>Connect</h3>
