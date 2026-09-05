@@ -28,7 +28,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
 body{
-  background:var(--bg);
+  background:var(--panel);
   color:var(--ink);
   font-family:var(--sans);
   font-size:16px;
@@ -103,18 +103,12 @@ a{color:inherit;}
 
 /* ---- content layout: sidebar + article ---- */
 .content-shell{padding:4.5rem 0;}
+/* section separation without a tinted fill */
+.band-built,.band-why,.band-decades,.band-quotes,.band-events,.band-closing{border-top:1px solid var(--rule);}
 .band-intro{background:var(--panel);}
-.content-grid{display:block;}
+.content-grid{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start;}
+@media (max-width:800px){.content-grid{grid-template-columns:1fr;gap:2rem;}}
 .band-intro article{max-width:46rem;}
-/* section nav: one horizontal row under the hero so the landing page keeps a
-   single left edge. the left rail stays on the document sub-pages. */
-.page-nav{background:var(--panel);border-bottom:1px solid var(--rule);}
-.page-nav .wrap{display:flex;flex-wrap:wrap;gap:2.25rem;align-items:center;}
-.page-nav a{display:block;padding:1.05rem 0;color:var(--ink);text-decoration:none;font-size:.95rem;line-height:1.3;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color 150ms ease,border-color 150ms ease;}
-.page-nav a:hover{color:var(--crimson-deep);border-bottom-color:var(--crimson-deep);}
-.page-nav a:focus-visible{outline:2px solid var(--focus);outline-offset:3px;}
-.page-nav a.current{font-family:var(--serif);font-weight:700;font-size:1.02rem;border-bottom-color:var(--crimson-deep);}
-@media (max-width:700px){.page-nav .wrap{flex-wrap:nowrap;overflow-x:auto;gap:1.5rem;scrollbar-width:none;-webkit-overflow-scrolling:touch;}.page-nav .wrap::-webkit-scrollbar{display:none;}.page-nav a{white-space:nowrap;padding:.8rem 0;font-size:.9rem;}.page-nav a.current{font-size:.95rem;}}
 /* heading block sits on the spine; the carousel below it still runs full bleed */
 .band-decades > .wrap:first-of-type{text-align:left;}
 @media (max-width:800px){.content-grid{grid-template-columns:1fr;}}
@@ -160,7 +154,7 @@ h2.section-head{
 .quote-arrows svg{width:1.1rem;height:1.1rem;}
 .quote-stage{max-width:44rem;margin:0;text-align:center;}
 .quote-card{
-  background:var(--bg);border-radius:16px;
+  background:var(--panel);border:1px solid var(--rule);border-radius:16px;
   padding:2.75rem 2rem 2.25rem;
 }
 .quote-card .mark{font-family:var(--serif);font-size:3.2rem;line-height:.4;height:1.6rem;margin-bottom:1.1rem;color:var(--crimson-deep);}
@@ -216,7 +210,7 @@ h2.section-head{
 
 /* ---- upcoming events: a horizontal rail (unlike the static supports grid,
    these are date-forward and meant to feel like flipping through a calendar) ---- */
-.band-events{background:var(--bg);padding:4.5rem 0;}
+.band-events{background:var(--panel);padding:4.5rem 0;}
 .rail-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
 .rail-arrows{display:flex;gap:.5rem;flex:0 0 auto;}
 .rail-arrows button{
@@ -232,8 +226,8 @@ h2.section-head{
 }
 .events-rail::-webkit-scrollbar{display:none;}
 .event-card{
-  scroll-snap-align:start;flex:0 0 16rem;background:var(--bg);
-  border-radius:10px;overflow:hidden;
+  scroll-snap-align:start;flex:0 0 16rem;background:var(--panel);
+  border:1px solid var(--rule);border-radius:10px;overflow:hidden;
   display:flex;flex-direction:column;
 }
 .event-card .when{
@@ -291,8 +285,8 @@ h2.section-head{
 .rail-nav.prev{left:.6rem;}
 .rail-nav.next{right:.6rem;}
 .decade-card{
-  scroll-snap-align:start;flex:0 0 19rem;background:#F1EFED;
-  border-radius:8px;overflow:hidden;position:relative;
+  scroll-snap-align:start;flex:0 0 19rem;background:var(--panel);
+  border:1px solid var(--rule);border-radius:8px;overflow:hidden;position:relative;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:2.25rem 1.75rem;min-height:19rem;
 }
@@ -388,7 +382,7 @@ h2.section-head{
 
 /* ---- why it matters: the unrestricted/immediate-use case, with the two
    figures the Class of 2026 HCF page publishes ---- */
-.band-why{background:var(--bg);padding:4.5rem 0;}
+.band-why{background:var(--panel);padding:4.5rem 0;}
 .why-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:4rem;align-items:start;}
 @media (max-width:860px){.why-grid{grid-template-columns:1fr;gap:2.25rem;}}
 .why-eyebrow{
@@ -402,7 +396,7 @@ h2.section-head{
 .why-grid p{margin:0 0 1rem;font-size:1.02rem;line-height:1.6;color:var(--ink);}
 .why-grid p:last-child{margin-bottom:0;}
 .stat-pair{display:grid;gap:1.25rem;}
-.stat{background:var(--panel);border-left:4px solid var(--crimson-deep);padding:1.6rem 1.75rem;}
+.stat{background:transparent;border-left:4px solid var(--crimson-deep);padding:.35rem 0 .35rem 1.5rem;}
 .stat .num{
   font-family:var(--serif);font-weight:700;line-height:1;color:var(--crimson-deep);
   font-size:clamp(2.4rem,5vw,3.2rem);display:block;margin-bottom:.5rem;
@@ -480,17 +474,16 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
   </div>
 </header>
 
-<nav class="page-nav" aria-label="Harvard College Fund pages">
-  <div class="wrap">
-    <a class="current" href="#" aria-current="page">Harvard College Fund</a>
-    <a href="hcf-staff-directory.html">HCF Staff Directory</a>
-    <a href="hcf-giving-recognition.html">Giving and Recognition</a>
-    <a href="hcf-associates.html">Associates</a>
-  </div>
-</nav>
-
 <div class="content-shell band-intro">
   <div class="wrap content-grid">
+    <nav class="side-nav" aria-label="Harvard College Fund section">
+      <a class="current" href="#" aria-current="page">Harvard College Fund</a>
+      <ul>
+        <li><a href="hcf-staff-directory.html">HCF Staff Directory</a></li>
+        <li><a href="hcf-giving-recognition.html">Giving and Recognition</a></li>
+        <li><a href="hcf-associates.html">Associates</a></li>
+      </ul>
+    </nav>
     <article>
       <p>One hundred years ago, 33 Harvard College alumni launched a new effort to support students then, and for the future. Their collective generosity laid the foundation for the Harvard College Fund.</p>
       <p>Hundreds of thousands of alumni, parents, and friends have rallied behind the Harvard College Fund mission since then. This community helps the Harvard College Fund go to work right away: addressing urgent issues, building momentum for new ideas, and supporting everyone at the College (undergraduates, graduate students, and faculty) through every step of their Harvard journey.</p>
