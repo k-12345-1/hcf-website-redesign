@@ -504,6 +504,13 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
 /* tighter handoff from the quote carousel into the closing note */
 .band-quotes{padding-bottom:2.5rem;}
 .band-closing{padding-top:2.5rem;}
+
+.evt-tag{
+  display:inline-block;margin-left:.5rem;padding:.1rem .45rem;
+  border:1px solid rgba(255,255,255,.6);border-radius:100px;
+  font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  vertical-align:middle;
+}
 </style>
 
 <div class="utility">
@@ -1018,7 +1025,9 @@ var QUOTES = [
      body  -- one or two sentences
      href  -- where "Details" points
 
-   Order in the array is the order on the rail.
+   Order in the array is the order on the rail. The second tab shows the
+   hcf list followed by the proposed list, so anything added to hcf shows
+   up under both tabs.
    ============================================================================ */
 var EVENT_SETS = {
   hcf: {
@@ -1069,14 +1078,25 @@ var EVENT_SETS = {
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".events-toggle [data-events]"));
   if (!rail || !tabs.length) return;
 
+  function itemsFor(key){
+    var base = EVENT_SETS.hcf.items;
+    if (key !== "proposed") return base;
+    // the proposed tab is additive: the Fund's own calendar, plus Katie's
+    return base.concat(EVENT_SETS.proposed.items.map(function(e){
+      var c = {}; for (var k in e) c[k] = e[k]; c.proposed = true; return c;
+    }));
+  }
+
   function render(key){
     var set = EVENT_SETS[key];
     if (!set) return;
     note.textContent = set.note || "";
     note.hidden = !set.note;
-    rail.innerHTML = set.items.map(function(e){
+    rail.innerHTML = itemsFor(key).map(function(e){
       return '<div class="event-card">' +
-               '<div class="when">' + e.when + '</div>' +
+               '<div class="when">' + e.when +
+                 (e.proposed ? ' <span class="evt-tag">Proposed</span>' : '') +
+               '</div>' +
                '<div class="body">' +
                  '<h3>' + e.title + '</h3>' +
                  '<p>' + e.body + '</p>' +
