@@ -108,8 +108,8 @@ a{color:inherit;}
 .content-grid{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start;}
 @media (max-width:800px){.content-grid{grid-template-columns:1fr;gap:2rem;}}
 .band-intro article{max-width:46rem;}
-/* heading block sits on the spine; the carousel below it still runs full bleed */
-.band-decades > .wrap:first-of-type{text-align:left;}
+/* heading block centred over the full-bleed carousel */
+.band-decades > .wrap:first-of-type{text-align:center;}
 @media (max-width:800px){.content-grid{grid-template-columns:1fr;}}
 /* section nav: a serif label over hairline-separated links that pick up a
    crimson rule on hover, rather than default-blue text in a box */
@@ -151,7 +151,7 @@ h2.section-head{
 }
 .quote-arrows button:hover{background:var(--crimson-deep);color:#fff;border-color:var(--crimson-deep);}
 .quote-arrows svg{width:1.1rem;height:1.1rem;}
-.quote-stage{max-width:44rem;margin:0;text-align:center;}
+.quote-stage{max-width:44rem;margin:0 auto;text-align:center;}
 .quote-card{
   background:var(--bg);border-radius:16px;
   padding:2.75rem 2rem 2.25rem;
@@ -225,7 +225,7 @@ h2.section-head{
 }
 .events-rail::-webkit-scrollbar{display:none;}
 .event-card{
-  scroll-snap-align:start;flex:0 0 16rem;background:var(--bg);
+  scroll-snap-align:start;flex:0 0 16rem;background:var(--panel);
   border-radius:10px;overflow:hidden;
   display:flex;flex-direction:column;
 }
@@ -247,9 +247,9 @@ h2.section-head{
    sans used for the other section heads */
 .band-decades .section-head{
   font-family:var(--serif);font-weight:700;text-transform:none;letter-spacing:normal;
-  font-size:clamp(1.5rem,2.6vw,2.05rem);line-height:1.2;margin:0 0 .6rem;text-align:left;
+  font-size:clamp(1.5rem,2.6vw,2.05rem);line-height:1.2;margin:0 0 .6rem;text-align:center;
 }
-.band-decades .section-sub{text-align:left;font-size:1.1rem;margin-bottom:0;}
+.band-decades .section-sub{text-align:center;font-size:1.1rem;margin-bottom:0;}
 
 /* full-bleed rail with the arrows overlaid on its left/right edges */
 .rail-stage{position:relative;margin-top:1.25rem;}
