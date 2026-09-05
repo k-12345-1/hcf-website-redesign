@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-<title>HCF Staff Directory | Harvard College Fund</title>
+<title>Programs and Stories | Harvard College Fund</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -403,7 +403,7 @@ h2.section-head{
 }
 .faq-list details[open] summary::after{transform:translateY(-30%) rotate(-135deg);}
 .faq-list summary:hover{color:var(--crimson-deep);}
-.faq-answer{padding:0 0 1.5rem 0;}
+.faq-answer{padding:0 2.5rem 1.5rem 0;}
 .faq-answer p{margin:0 0 .9rem;font-size:1rem;line-height:1.6;color:var(--ink);}
 .faq-answer p:last-child{margin-bottom:0;}
 
@@ -439,6 +439,49 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
 /* real brand glyphs, not lettered badges */
 .footer-col .icon{width:.95rem;height:.95rem;flex:0 0 auto;display:block;fill:currentColor;}
 .footer-bottom{padding:2rem 1.5rem 2.5rem;text-align:center;font-size:.92rem;color:rgba(255,255,255,.75);}
+
+.prog{padding-top:2.5rem;}
+.prog h2{margin-top:0;}
+.prog-label{
+  margin:1.5rem 0 .6rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--mut);
+}
+.prog-links{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);}
+.prog-links li{
+  display:grid;grid-template-columns:16rem 1fr;gap:1.25rem;align-items:baseline;
+  padding:.8rem 0;border-bottom:1px solid var(--rule);
+}
+.prog-links li a{font-weight:600;color:var(--crimson-deep);text-decoration:none;}
+.prog-links li a:hover{text-decoration:underline;text-underline-offset:2px;}
+.prog-links li span{font-size:.94rem;line-height:1.5;color:var(--mut);}
+@media (max-width:720px){.prog-links li{grid-template-columns:1fr;gap:.2rem;}}
+
+.story{
+  display:grid;grid-template-columns:15rem 1fr;gap:1.5rem;align-items:stretch;
+  margin:1.75rem 0 0;padding:1.25rem;background:var(--bg);border-left:4px solid var(--crimson-deep);
+}
+.story.is-pending{border-left-color:var(--rule);}
+.story-media{
+  background:#E4E1DE;min-height:8.5rem;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:.5rem;color:var(--mut);
+}
+.story-play{font-size:1.5rem;line-height:1;}
+.story-cap{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.story-eyebrow{
+  grid-column:1 / -1;margin:0 0 .25rem;font-size:.72rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--crimson-deep);
+}
+.story.is-pending .story-eyebrow{color:var(--mut);}
+.story-body h3{font-family:var(--serif);font-weight:700;font-size:1.1rem;margin:0 0 .3rem;line-height:1.3;}
+.story-when{
+  margin:0 0 .55rem !important;font-size:.74rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--crimson-deep);
+}
+.story.is-pending .story-when{color:var(--mut);}
+.story-body p{margin:0 0 .55rem;font-size:.95rem;line-height:1.55;}
+.story-with{margin:0 !important;font-size:.88rem;color:var(--mut);}
+.story-with span{font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-right:.35rem;}
+@media (max-width:720px){.story{grid-template-columns:1fr;}}
 </style>
 <style>
 .band-subhero{position:relative;background:#000;color:#fff;overflow:hidden;}
@@ -455,48 +498,42 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
 .page-body h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.75rem 0 1rem;}
 .page-body h2:first-child{margin-top:0;}
 .side-nav li a.on{color:var(--crimson-deep);font-weight:700;border-left-color:var(--crimson-deep);}
-/* the field sat on its own with the count stranded underneath; pairing them on
-   one row reads as a single control for the directory below */
-.one-line{max-width:none !important;white-space:nowrap;}
-@media (max-width:1100px){.one-line{white-space:normal;}}
-.dir-tools{
-  display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;
-  background:var(--bg);border:1px solid var(--rule);border-radius:6px;
-  padding:.85rem 1rem;margin:0 0 2rem;
-}
-.dir-field{display:flex;align-items:center;gap:.6rem;flex:1 1 20rem;min-width:0;color:var(--mut);}
-.dir-field svg{width:1.15rem;height:1.15rem;flex:0 0 auto;}
-.dir-search{
-  width:100%;font:inherit;font-size:.98rem;color:var(--ink);
-  background:transparent;border:none;padding:.35rem 0;
-}
-.dir-search:focus{outline:none;}
-.dir-field:focus-within{color:var(--crimson-deep);}
-.dir-tools:focus-within{border-color:var(--crimson-deep);box-shadow:0 0 0 2px rgba(142,0,22,.18);}
-.dir-count{font-size:.88rem;color:var(--mut);margin:0;flex:0 0 auto;}
-.jump-wrap{border-left:3px solid var(--crimson-deep);padding:.15rem 0 .15rem 1.15rem;margin:1.4rem 0 2rem;max-width:52rem;}
-.jump-wrap .lbl{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:.5rem;}
-.jump-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;}
-.jump-list a{font-size:1rem;color:var(--crimson-deep);text-decoration:none;border-bottom:1px solid rgba(142,0,22,.28);}
-.jump-list a:hover{border-bottom-color:var(--crimson-deep);}
-.dept{margin-bottom:2.25rem;scroll-margin-top:1.5rem;}
-h2[id]{scroll-margin-top:1.5rem;}
+.dir-search{width:100%;max-width:26rem;font:inherit;font-size:.95rem;padding:.7rem .9rem;border:1px solid var(--rule);border-radius:4px;}
+.dir-search:focus{outline:2px solid var(--crimson-deep);outline-offset:1px;}
+.dir-count{font-size:.85rem;color:var(--mut);margin:.6rem 0 2rem;}
+.dept{margin-bottom:2.25rem;}
 .dept h3{font-family:var(--serif);font-size:1.12rem;font-weight:700;margin:0 0 .7rem;padding-bottom:.5rem;border-bottom:2px solid var(--crimson-deep);}
-table.staff{width:100%;border-collapse:collapse;font-size:.95rem;table-layout:fixed;}
-table.staff th:nth-child(1),table.staff td:nth-child(1){width:26%;}
-table.staff th:nth-child(2),table.staff td:nth-child(2){width:52%;}
-table.staff th:nth-child(3),table.staff td:nth-child(3){width:22%;}
-@media (max-width:620px){table.staff th:nth-child(1),table.staff td:nth-child(1){width:30%;}table.staff th:nth-child(2),table.staff td:nth-child(2){width:39%;}table.staff th:nth-child(3),table.staff td:nth-child(3){width:31%;font-size:.8rem;}}
+table.staff{width:100%;border-collapse:collapse;font-size:.95rem;}
 table.staff th{text-align:left;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);padding:.45rem .75rem .45rem 0;border-bottom:1px solid var(--rule);}
 table.staff td{padding:.65rem .75rem .65rem 0;border-bottom:1px solid var(--rule);vertical-align:top;}
 table.staff td:first-child{font-weight:600;}
 table.staff a{color:var(--crimson-deep);text-decoration:none;white-space:nowrap;}
 table.staff a:hover{text-decoration:underline;}
 .no-results{display:none;color:var(--mut);font-style:italic;padding:1rem 0;}
-.society{border-top:3px solid var(--crimson-deep);padding-top:1.1rem;margin-bottom:2rem;}
+/* society index: a quiet contents block rather than a row of blocks */
+.jump-wrap{border-left:3px solid var(--crimson-deep);padding:.15rem 0 .15rem 1.15rem;margin:1.4rem 0 2.75rem;max-width:52rem;}
+.jump-wrap .lbl{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:.5rem;}
+.jump-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;}
+.jump-list a{font-size:1rem;color:var(--crimson-deep);text-decoration:none;border-bottom:1px solid rgba(142,0,22,.28);}
+.jump-list a:hover{border-bottom-color:var(--crimson-deep);}
+.society{scroll-margin-top:1.5rem;border-top:3px solid var(--crimson-deep);padding-top:1.1rem;margin-bottom:2rem;}
 .society h3{font-family:var(--serif);font-size:1.2rem;margin:0 0 .6rem;}
+.society p a,.page-body article > p a{color:var(--crimson-deep);text-decoration:none;border-bottom:1px solid rgba(142,0,22,.3);}
+.society p a:hover,.page-body article > p a:hover{border-bottom-color:var(--crimson-deep);}
+.society li a{color:var(--crimson-deep);}
+.society .more{display:inline-block;margin-top:.4rem;}
 .society p{margin:0 0 .8rem;font-size:.98rem;line-height:1.6;max-width:44rem;}
 .society ul{margin:.5rem 0 0;padding-left:1.1rem;max-width:44rem;}
+.yts{margin:1.1rem 0 0;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--panel);max-width:44rem;}
+.yts-row{display:grid;grid-template-columns:13.5rem 1fr;align-items:stretch;border-top:1px solid var(--rule);min-height:104px;}
+.yts-row:first-child{border-top:0;}
+.yts-amt{background:var(--tier);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:.15rem;padding:1rem 1.15rem;}
+.yts-amt .fig{font-family:var(--serif);font-size:var(--fs,1.35rem);line-height:1.15;font-variant-numeric:tabular-nums;}
+.yts-amt .qual{font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.8);line-height:1.35;}
+.yts-body{display:flex;flex-direction:column;justify-content:center;gap:.3rem;padding:1rem 1.35rem;}
+.yts-name{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--crimson-deep);}
+.yts-body p{margin:0;font-size:.95rem;line-height:1.55;color:var(--ink);}
+@media (max-width:720px){.yts-row{grid-template-columns:1fr;min-height:0;}.yts-amt .fig{font-size:1.25rem;}.yts-amt{flex-direction:row;align-items:baseline;gap:.5rem;padding:.7rem 1.1rem;}}
 .society li{margin-bottom:.55rem;font-size:.95rem;line-height:1.55;}
 .society .more{font-size:.85rem;font-weight:700;color:var(--crimson-deep);text-decoration:none;border-bottom:1px solid rgba(142,0,22,.35);}
 .level-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin:1.5rem 0 1.25rem;max-width:48rem;}
@@ -510,6 +547,8 @@ table.staff a:hover{text-decoration:underline;}
 @media (max-width:640px){.support-cols{columns:1;}}
 .support-cols li{margin-bottom:.4rem;font-size:.97rem;break-inside:avoid;}
 .cta-row{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.5rem;}
+.give-lead{margin:1.75rem 0 0 !important;text-align:center;max-width:44rem;font-size:1.05rem;font-weight:700;color:var(--ink);}
+.cta-centered{justify-content:center;max-width:44rem;margin-top:1rem;}
 .cta-solid{display:inline-block;background:var(--crimson-deep);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:.85rem 1.7rem;border-radius:4px;}
 .cta-solid:hover{background:#fff;color:var(--crimson-deep);box-shadow:inset 0 0 0 1px var(--crimson-deep);}
 .cta-ghost{display:inline-block;color:var(--crimson-deep);text-decoration:none;font-weight:700;font-size:.9rem;padding:.85rem 1.7rem;border:1px solid var(--crimson-deep);border-radius:4px;}
@@ -544,7 +583,8 @@ table.staff a:hover{text-decoration:underline;}
 <header class="band-subhero">
   <div class="wrap">
     <p class="crumb"><a href="index.html">Harvard College Fund</a></p>
-    <h1>HCF Staff Directory</h1>
+    <h1>Programs and Stories</h1>
+    <p class="dek">Four areas the Fund supports that no single Harvard page covers, and the Made Possible story planned for each</p>
   </div>
 </header>
 
@@ -553,126 +593,92 @@ table.staff a:hover{text-decoration:underline;}
     <nav class="side-nav" aria-label="Harvard College Fund section">
       <a class="current" href="index.html">Harvard College Fund</a>
       <ul>
-        <li><a href="hcf-programs.html">Programs and Stories</a></li>
-        <li><a href="hcf-staff-directory.html" class="on">HCF Staff Directory</a></li>
+        <li><a href="hcf-programs.html" class="on">Programs and Stories</a></li>
+        <li><a href="hcf-staff-directory.html">HCF Staff Directory</a></li>
         <li><a href="hcf-giving-recognition.html">Giving and Recognition</a></li>
         <li><a href="hcf-associates.html">Associates</a></li>
       </ul>
     </nav>
     <article>
-      <p>Whether you&rsquo;d like to become a volunteer, learn about your Reunion class campaign, or get more information about the Harvard College Fund and its mission, our staff is here to help.</p>
-      <p>Below you will find Harvard College Fund staff and class officers by department and class year.</p>
-      <div class="jump-wrap"><span class="lbl">On this page</span><ul class="jump-list"><li><a href="#leadership">Harvard College Fund Leadership</a></li><li><a href="#associates-committee">HCF Associates Committee</a></li><li><a href="#gsf">Graduate School Fund (Harvard Griffin GSAS)</a></li><li><a href="#parent-engagement">Harvard College Fund Parent Engagement Programs</a></li><li><a href="#womens-philanthropy">Women’s Philanthropy Initiative</a></li><li><a href="#class-officers">Class Officers</a></li></ul></div>
-      <div class="dir-tools">
-        <label class="dir-field" for="dirSearch">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <input type="search" class="dir-search" id="dirSearch" placeholder="Search by name or title" aria-label="Search the staff directory">
-        </label>
-        <p class="dir-count" id="dirCount"></p>
+      <p>Some of what the Fund supports has one obvious page on harvard.edu. Financial aid does. Libraries do. Others are a set of programs spread across offices, with no single address to send anyone to.</p>
+      <p>This page gathers four of those. Each one gives the programs themselves, and the <strong>Made Possible</strong> story planned for it: one person, one experience, in their own words, opening on a beat about who paid for it.</p>
+      <div class="jump-wrap">
+        <p class="jump-label">On this page</p>
+        <ul class="jump">
+<li><a href="#research">Research</a></li>
+<li><a href="#public-service">Public Service</a></li>
+<li><a href="#hands-on-learning">Hands-On Learning</a></li>
+<li><a href="#senior-week">Senior Week Events</a></li>
+</ul>
       </div>
-      <h2>Departments</h2>
-      <div class="dept" id="leadership"><h3>Harvard College Fund Leadership</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Dara Wolkoff</td><td>Senior Executive Director, Harvard College Fund</td><td><a href="tel:+16174962807">617-496-2807</a></td></tr><tr><td>Cara Mia Bruncati</td><td>Director of Development, Annual Programs</td><td><a href="tel:+16174963819">617-496-3819</a></td></tr><tr><td>Becky Fassio</td><td>Managing Director, Reunion Campaigns</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Erin Hobin-Audet</td><td>Director of Development, Reunion Campaigns</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Kate Osterman</td><td>Managing Director, Reunion Campaigns</td><td><a href="tel:+16174965622">617-496-5622</a></td></tr></tbody></table></div>
-      <div class="dept" id="associates-committee"><h3>HCF Associates Committee</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Liz Sapia</td><td>Associate Director of Development</td><td><a href="tel:+16177800193">617-780-0193</a></td></tr><tr><td>Jess Kidd</td><td>Development Coordinator</td><td><a href="tel:+16174957557">617-495-7557</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-      <div class="dept" id="gsf"><h3>Graduate School Fund (Harvard Griffin GSAS)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Paula Norato</td><td>Assistant Director of Development</td><td><a href="tel:+16174961212">617-496-1212</a></td></tr></tbody></table></div>
-      <div class="dept" id="parent-engagement"><h3>Harvard College Fund Parent Engagement Programs</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Sarah Calabrese</td><td>Associate Director of Development</td><td><a href="tel:+16174950419">617-495-0419</a></td></tr><tr><td>Caroline Dunbar</td><td>Development Coordinator</td><td><a href="tel:+16174965642">617-496-5642</a></td></tr><tr><td>Rachel Hickey</td><td>Development Assistant</td><td><a href="tel:+16174960035">617-496-0035</a></td></tr></tbody></table></div>
-      <div class="dept" id="womens-philanthropy"><h3>Women’s Philanthropy Initiative</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Kelsey Trueblood</td><td>Senior Associate Director of Development</td><td><a href="tel:+16174964429">617-496-4429</a></td></tr><tr><td>Jess Kidd</td><td>Development Coordinator</td><td><a href="tel:+16174957557">617-495-7557</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-      <h2 id="class-officers">Class Officers</h2>
-      <p class="one-line">Each class is supported by a class officer and a development assistant. Find your class year below.</p>
-      <div class="faq-list">
-        <details><summary>2020s</summary><div class="faq-answer">
-          <div class="dept"><h3>2026</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Paige Lemieux</td><td>Class Officer</td><td><a href="tel:+16174963266">617-496-3266</a></td></tr><tr><td>Jess Kidd</td><td>Development Coordinator</td><td><a href="tel:+16174957557">617-495-7557</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2025</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Claire Mumford</td><td>Class Officer</td><td><a href="tel:+16178359854">617-835-9854</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2024</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Claire Mumford</td><td>Class Officer</td><td><a href="tel:+16178359854">617-835-9854</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2023</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Claire Mumford</td><td>Class Officer</td><td><a href="tel:+16178359854">617-835-9854</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2022</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Claire Mumford</td><td>Class Officer</td><td><a href="tel:+16178359854">617-835-9854</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2021 (5th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Claire Mumford</td><td>Class Officer</td><td><a href="tel:+16178359854">617-835-9854</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2020</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Claire Mumford</td><td>Class Officer</td><td><a href="tel:+16178359854">617-835-9854</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-        </div></details>
-        <details><summary>2010s</summary><div class="faq-answer">
-          <div class="dept"><h3>2019</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Claire Mumford</td><td>Class Officer</td><td><a href="tel:+16178359854">617-835-9854</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2018</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Claire Mumford</td><td>Class Officer</td><td><a href="tel:+16178359854">617-835-9854</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2017</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2016 (10th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Maggie Scanlon</td><td>Class Officer</td><td><a href="tel:+16174951935">617-495-1935</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2015</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2014</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Joe Regan</td><td>Class Officer</td><td><a href="tel:+16173849373">617-384-9373</a></td></tr><tr><td>Liz Pasquale</td><td>Development Assistant</td><td><a href="tel:+16174966623">617-496-6623</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2013</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Ana Mirovic</td><td>Class Officer</td><td><a href="tel:+16174953451">617-495-3451</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2012</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Kate Osterman</td><td>Class Officer</td><td><a href="tel:+16174965622">617-496-5622</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2011 (15th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Lauren Pyes</td><td>Class Officer</td><td><a href="tel:+16174960355">617-496-0355</a></td></tr><tr><td>Rachel Hickey</td><td>Development Assistant</td><td><a href="tel:+16174960035">617-496-0035</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2010</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Joe Regan</td><td>Class Officer</td><td><a href="tel:+16173849373">617-384-9373</a></td></tr><tr><td>Liz Pasquale</td><td>Development Assistant</td><td><a href="tel:+16174966623">617-496-6623</a></td></tr></tbody></table></div>
-        </div></details>
-        <details><summary>2000s</summary><div class="faq-answer">
-          <div class="dept"><h3>2009</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Danielle Al-Abed</td><td>Class Officer</td><td><a href="tel:+16174960895">617-496-0895</a></td></tr><tr><td>Rachel Hickey</td><td>Development Assistant</td><td><a href="tel:+16174960035">617-496-0035</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2008</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2007</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Alana McGrath</td><td>Class Officer</td><td><a href="tel:+16174961167">617-496-1167</a></td></tr><tr><td>Liz Pasquale</td><td>Development Assistant</td><td><a href="tel:+16174966623">617-496-6623</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2006 (20th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Ana Mirovic</td><td>Class Officer</td><td><a href="tel:+16174953451">617-495-3451</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2005</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Danielle Al-Abed</td><td>Class Officer</td><td><a href="tel:+16174960895">617-496-0895</a></td></tr><tr><td>Rachel Hickey</td><td>Development Assistant</td><td><a href="tel:+16174960035">617-496-0035</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2004</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Maggie Scanlon</td><td>Class Officer</td><td><a href="tel:+16174951935">617-495-1935</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2003</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2002</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Ana Mirovic</td><td>Class Officer</td><td><a href="tel:+16174953451">617-495-3451</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2001 (25th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Joe Regan</td><td>Class Officer</td><td><a href="tel:+16173849373">617-384-9373</a></td></tr><tr><td>Liz Pasquale</td><td>Development Assistant</td><td><a href="tel:+16174966623">617-496-6623</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>2000</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Abby Fischer</td><td>Class Officer</td><td><a href="tel:+16174966898">617-496-6898</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-        </div></details>
-        <details><summary>1990s</summary><div class="faq-answer">
-          <div class="dept"><h3>1999</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1998</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1997</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Danielle Al-Abed</td><td>Class Officer</td><td><a href="tel:+16174960895">617-496-0895</a></td></tr><tr><td>Rachel Hickey</td><td>Development Assistant</td><td><a href="tel:+16174960035">617-496-0035</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1996 (30th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1995</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Kate Osterman</td><td>Class Officer</td><td><a href="tel:+16174965622">617-496-5622</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1994</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1993</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Kate Osterman</td><td>Class Officer</td><td><a href="tel:+16174965622">617-496-5622</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1992</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Lauren Pyes</td><td>Class Officer</td><td><a href="tel:+16174960355">617-496-0355</a></td></tr><tr><td>Rachel Hickey</td><td>Development Assistant</td><td><a href="tel:+16174960035">617-496-0035</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1991 (35th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Abby Fischer</td><td>Class Officer</td><td><a href="tel:+16174966898">617-496-6898</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1990</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Soren Birkeland</td><td>Development Assistant</td><td><a href="tel:+16174961211">617-496-1211</a></td></tr></tbody></table></div>
-        </div></details>
-        <details><summary>1980s</summary><div class="faq-answer">
-          <div class="dept"><h3>1989</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Abby Fischer</td><td>Class Officer</td><td><a href="tel:+16174966898">617-496-6898</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1988</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1987</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Abby Fischer</td><td>Class Officer</td><td><a href="tel:+16174966898">617-496-6898</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1986 (40th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Kate Osterman</td><td>Class Officer</td><td><a href="tel:+16174965622">617-496-5622</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1985</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Maggie Scanlon</td><td>Class Officer</td><td><a href="tel:+16174951935">617-495-1935</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1984</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Ana Mirovic</td><td>Class Officer</td><td><a href="tel:+16174953451">617-495-3451</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1983</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Lauren Pyes</td><td>Class Officer</td><td><a href="tel:+16174960355">617-496-0355</a></td></tr><tr><td>Rachel Hickey</td><td>Development Assistant</td><td><a href="tel:+16174960035">617-496-0035</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1982</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Joe Regan</td><td>Class Officer</td><td><a href="tel:+16173849373">617-384-9373</a></td></tr><tr><td>Liz Pasquale</td><td>Development Assistant</td><td><a href="tel:+16174966623">617-496-6623</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1981 (45th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Alana McGrath</td><td>Class Officer</td><td><a href="tel:+16174960355">617-496-0355</a></td></tr><tr><td>Liz Pasquale</td><td>Development Assistant</td><td><a href="tel:+16174966623">617-496-6623</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1980</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Alana McGrath</td><td>Class Officer</td><td><a href="tel:+16174961167">617-496-1167</a></td></tr><tr><td>Liz Pasquale</td><td>Development Assistant</td><td><a href="tel:+16174966623">617-496-6623</a></td></tr></tbody></table></div>
-        </div></details>
-        <details><summary>1970s</summary><div class="faq-answer">
-          <div class="dept"><h3>1979</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Becky Fassio</td><td>Class Officer</td><td><a href="tel:+16174966368">617-496-6368</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1978</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Kate Osterman</td><td>Class Officer</td><td><a href="tel:+16174965622">617-496-5622</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1977</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Maggie Scanlon</td><td>Class Officer</td><td><a href="tel:+16174951935">617-495-1935</a></td></tr><tr><td>Barret LaPlante</td><td>Development Assistant</td><td><a href="tel:+16174327142">617-432-7142</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1976 (50th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Danielle Al-Abed</td><td>Class Officer</td><td><a href="tel:+16174960895">617-496-0895</a></td></tr><tr><td>Rachel Hickey</td><td>Development Assistant</td><td><a href="tel:+16174960035">617-496-0035</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1975</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1974</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1973</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Kate Osterman</td><td>Class Officer</td><td><a href="tel:+16174965622">617-496-5622</a></td></tr><tr><td>Bella Solomon</td><td>Development Assistant</td><td><a href="tel:+16174960972">617-496-0972</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1972</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1971 (55th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1970</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-        </div></details>
-        <details><summary>1960s</summary><div class="faq-answer">
-          <div class="dept"><h3>1969</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1968</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1967</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1966 (60th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1965</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1964</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1963</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1962</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1961 (65th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1960</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-        </div></details>
-        <details><summary>1950s</summary><div class="faq-answer">
-          <div class="dept"><h3>1959</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1958</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1957</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1956 (70th Reunion)</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1955</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1954</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1953</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1952</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-          <div class="dept"><h3>1951 and earlier</h3><table class="staff"><thead><tr><th>Name</th><th>Title</th><th>Phone</th></tr></thead><tbody><tr><td>Erin Hobin-Audet</td><td>Class Officer</td><td><a href="tel:+16174953023">617-495-3023</a></td></tr><tr><td>Isaiah Willis</td><td>Development Assistant</td><td><a href="tel:+16174950613">617-495-0613</a></td></tr></tbody></table></div>
-        </div></details>
+
+      <div class="prog" id="research">
+        <h2>Research</h2>
+        <p>Work reaching from natural and artificial intelligence to new ways of treating and preventing disease, at the university that debuted the country&rsquo;s first programmable computer. The Fund supports the grants that let undergraduates take part in it rather than only read about it.</p>
+        <p class="prog-label">Where it happens</p>
+        <ul class="prog-links"><li><a href="https://uraf.harvard.edu">Undergraduate Research and Fellowships</a><span>The office that administers undergraduate research funding across the College.</span></li><li><a href="https://uraf.harvard.edu/hcrp">Harvard College Research Program</a><span>Term-time and summer grants for students working with a faculty mentor.</span></li><li><a href="https://uraf.harvard.edu/prise">PRISE</a><span>A residential summer research community in the sciences and engineering.</span></li><li><a href="https://kempnerinstitute.harvard.edu">Kempner Institute</a><span>Natural and artificial intelligence, with undergraduate research placements.</span></li><li><a href="https://innovationlabs.harvard.edu">Harvard Innovation Labs</a><span>Where Spark Grants and student ventures get built.</span></li></ul>
+        <div class="story">
+          <p class="story-eyebrow">Made Possible story</p>
+          <div class="story-media" aria-hidden="true"><span class="story-play">&#9658;</span><span class="story-cap">Story in production</span></div>
+          <div class="story-body">
+            <h3>Research grants and Spark Grants</h3>
+            <p class="story-when">April 2027</p>
+            <p>Released as summer funding decisions land, when the grant is the difference between a summer of research and a summer without one.</p>
+            <p class="story-with"><span>With</span> The Office of Undergraduate Research and Fellowships, and the Harvard Innovation Labs</p>
+          </div>
+        </div>
       </div>
-      <p class="no-results" id="noRes">No staff match that search.</p>
+
+      <div class="prog" id="public-service">
+        <h2>Public Service</h2>
+        <p>SPARK, which gives incoming first-years a stipend and a summer of mentorship to design and run a service project in the community they call home, and the wider set of programs that keep students in that work through four years.</p>
+        <p class="prog-label">Where it happens</p>
+        <ul class="prog-links"><li><a href="https://publicservice.fas.harvard.edu/SPARK">SPARK</a><span>A stipend and summer mentorship for incoming first-years, before they set foot on campus.</span></li><li><a href="https://publicservice.fas.harvard.edu">Center for Public Service and Engaged Scholarship</a><span>The College office behind SPARK and the fellowships that follow it.</span></li><li><a href="https://pbha.org">Phillips Brooks House Association</a><span>Student-run public service, and the largest such organization on campus.</span></li></ul>
+        <div class="story is-pending">
+          <p class="story-eyebrow">Made Possible story</p>
+          <div class="story-media" aria-hidden="true"><span class="story-play">&#9658;</span><span class="story-cap">Story in production</span></div>
+          <div class="story-body">
+            <h3>Public service</h3>
+            <p class="story-when">Not yet scheduled</p>
+            <p>The ten stories in the plan do not yet include one for public service. This is the slot it would take.</p>
+            <p class="story-with"><span>With</span> The Center for Public Service and Engaged Scholarship, and PBHA</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog" id="hands-on-learning">
+        <h2>Hands-On Learning</h2>
+        <p>The Fabrication Makerspace, the Active Learning Labs, field study at Harvard Forest and Reimagining Experiential Education. Together they put laser cutters, engineering benches and working woodland within reach of any student with an idea worth building.</p>
+        <p class="prog-label">Where it happens</p>
+        <ul class="prog-links"><li><a href="https://seas.harvard.edu/reef-makerspace">REEF Makerspace</a><span>Laser cutters, 3D printers and fabrication benches, open to any student.</span></li><li><a href="https://seas.harvard.edu/active-learning-labs">Active Learning Labs</a><span>Teaching labs and equipment behind SEAS coursework.</span></li><li><a href="https://harvardforest.fas.harvard.edu">Harvard Forest</a><span>Four thousand acres in Petersham, and a working field station.</span></li></ul>
+        <div class="story">
+          <p class="story-eyebrow">Made Possible story</p>
+          <div class="story-media" aria-hidden="true"><span class="story-play">&#9658;</span><span class="story-cap">Story in production</span></div>
+          <div class="story-body">
+            <h3>Harvard Forest, the REEF Makerspace and the Active Learning Labs</h3>
+            <p class="story-when">April 2027</p>
+            <p>Released in April, when students are finishing end-of-term projects in these spaces.</p>
+            <p class="story-with"><span>With</span> Harvard Forest, and SEAS Teaching and Learning, who run both spaces</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog" id="senior-week">
+        <h2>Senior Week Events</h2>
+        <p>The stretch between the last exam and Commencement, filled with events for the graduating class. It is the send-off: the last time the class gathers before a lifetime in the alumni community.</p>
+        <p class="prog-label">Where it happens</p>
+        <ul class="prog-links"><li><a href="https://alumni.harvard.edu/college/seniors">Harvard College Seniors</a><span>The alumni association&rsquo;s hub for the graduating class.</span></li><li><a href="https://commencement.harvard.edu">Commencement</a><span>The week itself, and the ceremony that closes it.</span></li><li><a href="https://recreation.gocrimson.com">Harvard Recreation</a><span>The athletic facilities open to every student, Senior Week included.</span></li></ul>
+        <div class="story">
+          <p class="story-eyebrow">Made Possible story</p>
+          <div class="story-media" aria-hidden="true"><span class="story-play">&#9658;</span><span class="story-cap">Story in production</span></div>
+          <div class="story-body">
+            <h3>Athletic facilities, and Senior Week events</h3>
+            <p class="story-when">May 2027</p>
+            <p>Released in May, during Senior Week itself.</p>
+            <p class="story-with"><span>With</span> Harvard Recreation, and the Program Marshals</p>
+          </div>
+        </div>
+      </div>
     </article>
   </div>
 </div>
@@ -739,30 +745,3 @@ table.staff a:hover{text-decoration:underline;}
   </div>
   <div class="footer-bottom">&copy; 2026 The President and Fellows of Harvard College</div>
 </footer>
-<script>
-(function(){
-  var input=document.getElementById("dirSearch"), count=document.getElementById("dirCount"),
-      none=document.getElementById("noRes"),
-      rows=[].slice.call(document.querySelectorAll("table.staff tbody tr"));
-  function label(n){ return n+(n===1?" person listed":" people listed"); }
-  count.textContent=label(rows.length);
-  input.addEventListener("input",function(){
-    var q=input.value.trim().toLowerCase(), shown=0;
-    rows.forEach(function(r){
-      var hit=!q||r.textContent.toLowerCase().indexOf(q)>-1;
-      r.style.display=hit?"":"none"; if(hit) shown++;
-    });
-    // hide any group whose rows are all filtered out
-    document.querySelectorAll(".dept").forEach(function(d){
-      var vis=[].slice.call(d.querySelectorAll("tbody tr")).some(function(r){return r.style.display!=="none";});
-      d.style.display=vis?"":"none";
-    });
-    document.querySelectorAll(".faq-list details").forEach(function(dt){
-      var vis=[].slice.call(dt.querySelectorAll(".dept")).some(function(d){return d.style.display!=="none";});
-      dt.style.display=vis?"":"none"; if(q&&vis) dt.open=true;
-    });
-    count.textContent=q?(label(shown)+' matching \u201c'+input.value.trim()+'\u201d'):label(rows.length);
-    none.style.display=shown?"none":"block";
-  });
-})();
-</script>
