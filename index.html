@@ -29,7 +29,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
 body{
-  background:var(--panel);
+  background:var(--bg);
   color:var(--ink);
   font-family:var(--sans);
   font-size:16px;
@@ -104,8 +104,6 @@ a{color:inherit;}
 
 /* ---- content layout: sidebar + article ---- */
 .content-shell{padding:4.5rem 0;}
-/* section separation without a tinted fill */
-.band-built,.band-why,.band-decades,.band-quotes,.band-events,.band-closing{border-top:1px solid var(--rule);}
 .band-intro{background:var(--panel);}
 .content-grid{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start;}
 @media (max-width:800px){.content-grid{grid-template-columns:1fr;gap:2rem;}}
@@ -155,7 +153,7 @@ h2.section-head{
 .quote-arrows svg{width:1.1rem;height:1.1rem;}
 .quote-stage{max-width:44rem;margin:0;text-align:center;}
 .quote-card{
-  background:var(--panel);border:1px solid var(--rule);border-radius:16px;
+  background:var(--bg);border-radius:16px;
   padding:2.75rem 2rem 2.25rem;
 }
 .quote-card .mark{font-family:var(--serif);font-size:3.2rem;line-height:.4;height:1.6rem;margin-bottom:1.1rem;color:var(--crimson-deep);}
@@ -211,7 +209,7 @@ h2.section-head{
 
 /* ---- upcoming events: a horizontal rail (unlike the static supports grid,
    these are date-forward and meant to feel like flipping through a calendar) ---- */
-.band-events{background:var(--panel);padding:4.5rem 0;}
+.band-events{background:var(--bg);padding:4.5rem 0;}
 .rail-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
 .rail-arrows{display:flex;gap:.5rem;flex:0 0 auto;}
 .rail-arrows button{
@@ -227,8 +225,8 @@ h2.section-head{
 }
 .events-rail::-webkit-scrollbar{display:none;}
 .event-card{
-  scroll-snap-align:start;flex:0 0 16rem;background:var(--panel);
-  border:1px solid var(--rule);border-radius:10px;overflow:hidden;
+  scroll-snap-align:start;flex:0 0 16rem;background:var(--bg);
+  border-radius:10px;overflow:hidden;
   display:flex;flex-direction:column;
 }
 .event-card .when{
@@ -286,8 +284,8 @@ h2.section-head{
 .rail-nav.prev{left:.6rem;}
 .rail-nav.next{right:.6rem;}
 .decade-card{
-  scroll-snap-align:start;flex:0 0 19rem;background:var(--panel);
-  border:1px solid var(--rule);border-radius:8px;overflow:hidden;position:relative;
+  scroll-snap-align:start;flex:0 0 19rem;background:#F1EFED;
+  border-radius:8px;overflow:hidden;position:relative;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:2.25rem 1.75rem;min-height:19rem;
 }
@@ -383,7 +381,7 @@ h2.section-head{
 
 /* ---- why it matters: the unrestricted/immediate-use case, with the two
    figures the Class of 2026 HCF page publishes ---- */
-.band-why{background:var(--panel);padding:4.5rem 0;}
+.band-why{background:var(--bg);padding:4.5rem 0;}
 .why-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:4rem;align-items:start;}
 @media (max-width:860px){.why-grid{grid-template-columns:1fr;gap:2.25rem;}}
 .why-eyebrow{
@@ -397,7 +395,7 @@ h2.section-head{
 .why-grid p{margin:0 0 1rem;font-size:1.02rem;line-height:1.6;color:var(--ink);}
 .why-grid p:last-child{margin-bottom:0;}
 .stat-pair{display:grid;gap:1.25rem;}
-.stat{background:transparent;border-left:4px solid var(--crimson-deep);padding:.35rem 0 .35rem 1.5rem;}
+.stat{background:var(--panel);border-left:4px solid var(--crimson-deep);padding:1.6rem 1.75rem;}
 .stat .num{
   font-family:var(--serif);font-weight:700;line-height:1;color:var(--crimson-deep);
   font-size:clamp(2.4rem,5vw,3.2rem);display:block;margin-bottom:.5rem;
@@ -677,6 +675,13 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
   </div>
 </section>
 
+<div class="content-shell band-closing">
+  <div class="wrap closing-note">
+    <p>And we&rsquo;re just getting started! Thanks to the collective impact of alumni, parents, and friends, the Harvard College Fund continues to create continuity amid uncertainty, support groundbreaking discoveries, and open doors to extraordinary students.</p>
+    <p>Whether you&rsquo;ve been part of this caring community for decades or are ready to show your support now, you&rsquo;re invited to be part of something legendary. Join us as we celebrate a century of giving forward.</p>
+  </div>
+</div>
+
 <section class="band-events">
   <div class="wrap">
     <div class="rail-head">
@@ -737,13 +742,6 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
     </div>
   </div>
 </section>
-
-<div class="content-shell band-closing">
-  <div class="wrap closing-note">
-    <p>And we&rsquo;re just getting started! Thanks to the collective impact of alumni, parents, and friends, the Harvard College Fund continues to create continuity amid uncertainty, support groundbreaking discoveries, and open doors to extraordinary students.</p>
-    <p>Whether you&rsquo;ve been part of this caring community for decades or are ready to show your support now, you&rsquo;re invited to be part of something legendary. Join us as we celebrate a century of giving forward.</p>
-  </div>
-</div>
 
 <section class="band-contact">
   <div class="wrap contact-grid">
