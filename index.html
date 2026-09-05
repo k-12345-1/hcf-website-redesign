@@ -86,7 +86,7 @@ a{color:inherit;}
 }
 .band-hero .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:3rem;padding:5.5rem 1.5rem;flex-wrap:nowrap;}
 .hero-copy{flex:0 1 auto;min-width:0;}
-.hero-copy h1{font-family:var(--serif);font-weight:700;font-size:2.5rem;line-height:1.15;margin:0 0 .65rem;white-space:nowrap;}
+.hero-copy h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.5rem,4vw,3.4rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 .65rem;white-space:nowrap;}
 .hero-copy .lead{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.25rem;margin:0 0 1.75rem;color:rgba(255,255,255,.95);}
 .btn{
   display:inline-block;
@@ -130,19 +130,21 @@ a{color:inherit;}
 .side-nav li a:hover{color:var(--crimson-deep);border-left-color:var(--crimson-deep);}
 article p{margin:0 0 1.3rem;max-width:44rem;font-size:1.12rem;line-height:1.65;}
 
-/* ---- section eyebrow / header style, matches the real page's h2.h4 ---- */
+/* ---- section heads: one serif display voice at a real size, the way
+   harvard.edu/campus sets every section title ---- */
 h2.section-head{
-  font-family:var(--sans);font-weight:500;font-size:1.15rem;
-  letter-spacing:-.01em;text-transform:uppercase;margin:0 0 .3rem;
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.15;
+  letter-spacing:-.02em;text-transform:none;margin:0 0 .45rem;color:var(--ink);
 }
-.section-sub{color:var(--mut);margin:0 0 1.5rem;font-size:1.05rem;}
+.section-sub{color:var(--mut);margin:0 0 1.5rem;font-size:1.08rem;line-height:1.55;max-width:42rem;}
 
 /* ---- quote band: one-at-a-time carousel with arrow steppers and a
    directional slide-in on change (same pattern as the FOP Alumni site's
    "Hear from the students" testimonials) ---- */
 .band-quotes{background:var(--panel);color:var(--ink);padding:4.5rem 0;overflow:hidden;}
 .quote-head{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-bottom:1.75rem;}
-.quote-head h2{font-family:var(--serif);font-weight:700;font-size:1.5rem;margin:0;}
+.quote-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.15;letter-spacing:-.02em;margin:0;}
 .quote-arrows{display:flex;gap:.6rem;flex:0 0 auto;}
 .quote-arrows button{
   width:2.75rem;height:2.75rem;border-radius:8px;border:1.5px solid var(--rule);
@@ -176,8 +178,8 @@ h2.section-head{
 }
 @media (max-width:860px){.built-head{grid-template-columns:1fr;gap:1.5rem;}}
 .built-head h2{
-  font-family:var(--sans);font-weight:700;
-  font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.03;letter-spacing:-.03em;
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.08;letter-spacing:-.02em;
   margin:0;text-wrap:balance;color:var(--ink);
 }
 .built-head p{margin:.4rem 0 0;font-size:1.02rem;line-height:1.6;color:var(--ink);}
@@ -247,7 +249,7 @@ h2.section-head{
    sans used for the other section heads */
 .band-decades .section-head{
   font-family:var(--serif);font-weight:700;text-transform:none;letter-spacing:normal;
-  font-size:clamp(1.5rem,2.6vw,2.05rem);line-height:1.2;margin:0 0 .6rem;text-align:center;
+  font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.2;margin:0 0 .6rem;text-align:center;
 }
 .band-decades .section-sub{text-align:center;font-size:1.1rem;margin-bottom:0;}
 
@@ -390,7 +392,7 @@ h2.section-head{
 }
 .why-grid h2{
   font-family:var(--serif);font-weight:700;margin:0 0 1rem;
-  font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.18;
+  font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.15;letter-spacing:-.02em;
 }
 .why-grid p{margin:0 0 1rem;font-size:1.02rem;line-height:1.6;color:var(--ink);}
 .why-grid p:last-child{margin-bottom:0;}
@@ -507,6 +509,19 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
   font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
   vertical-align:middle;
 }
+
+/* ---- Voices on near-black, the way harvard.edu/campus sets its quote block.
+   Their palette runs light #F3F4F4 against near-black #0E0E0E with nothing
+   in between; this is the one band on our page that carries that. ---- */
+.band-quotes{background:#0E0E0E;color:#F3F4F4;}
+.band-quotes .quote-head h2{color:#F3F4F4;}
+.quote-card{background:transparent;border-radius:0;padding:1.5rem 0 0;}
+.quote-card p.q{color:#F3F4F4;font-size:clamp(1.25rem,2.3vw,1.75rem);line-height:1.4;}
+.quote-card p.attr{color:rgba(243,244,244,.68);}
+.quote-card .mark{color:#F3F4F4;opacity:.55;}
+.band-quotes .quote-arrows button{border-color:rgba(243,244,244,.4);color:#F3F4F4;}
+.band-quotes .quote-arrows button:hover{background:#F3F4F4;color:#0E0E0E;border-color:#F3F4F4;}
+.band-quotes .quote-arrows button:focus-visible{outline:2px solid #F3F4F4;outline-offset:2px;}
 </style>
 
 <div class="utility">
