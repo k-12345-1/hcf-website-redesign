@@ -500,6 +500,42 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
   .decade-card{align-items:flex-start;text-align:left;}
   .decade-card .yr,.decade-card p{text-align:left;}
 }
+
+/* ---- events: switch between the Fund's own calendar and the proposed one ---- */
+.events-toggle{display:inline-flex;gap:0;margin:1.5rem 0 .9rem;border:1px solid var(--rule);border-radius:100px;overflow:hidden;background:var(--panel);}
+.events-toggle button{
+  font:inherit;font-size:.85rem;font-weight:600;color:var(--mut);
+  background:transparent;border:none;cursor:pointer;padding:.6rem 1.15rem;min-height:24px;
+  transition:background 150ms ease,color 150ms ease;
+}
+.events-toggle button:hover{color:var(--crimson-deep);}
+.events-toggle button:focus-visible{outline:2px solid var(--focus);outline-offset:-2px;}
+.events-toggle button[aria-selected="true"]{background:var(--crimson-deep);color:#fff;}
+.events-note{margin:0 0 1.25rem;font-size:.92rem;line-height:1.55;color:var(--mut);max-width:42rem;}
+@media (max-width:560px){
+  .events-toggle{display:flex;width:100%;}
+  .events-toggle button{flex:1 1 50%;padding:.6rem .5rem;font-size:.8rem;}
+}
+
+.built-lead{margin:.9rem 0 0;font-size:1.02rem;line-height:1.6;color:var(--ink);max-width:46rem;}
+/* ---- bridge from the areas the Fund supports into a personal account ---- */
+.made-possible{
+  margin-top:2.75rem;padding:2rem 2.25rem;
+  background:var(--crimson-wash);border-left:4px solid var(--crimson-deep);
+}
+.mp-eyebrow{
+  margin:0 0 .5rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--crimson-deep);
+}
+.made-possible h3{font-family:var(--serif);font-weight:700;font-size:1.3rem;line-height:1.25;margin:0 0 .7rem;}
+.made-possible p{margin:0 0 1rem;font-size:1rem;line-height:1.6;color:var(--ink);max-width:44rem;}
+.made-possible p:last-of-type{margin-bottom:1.1rem;}
+.mp-link{
+  font-size:.92rem;font-weight:600;color:var(--crimson-deep);text-decoration:none;
+  border-bottom:1px solid rgba(142,0,22,.35);padding-bottom:1px;
+}
+.mp-link:hover{border-bottom-color:var(--crimson-deep);}
+@media (max-width:560px){.made-possible{padding:1.5rem 1.25rem;}}
 </style>
 
 <div class="utility">
@@ -563,17 +599,17 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
     <div class="why-grid">
       <div>
         <p class="why-eyebrow">Why it matters</p>
-        <h2>Unrestricted, and put to work now.</h2>
-        <p>The Harvard College Fund is the College&rsquo;s primary source of unrestricted, immediate-use funding. Unlike endowment funds, which are often restricted to specific purposes and distributed gradually over time, HCF support is flexible and usable right away.</p>
+        <h2>Contributions are immediately available.</h2>
+        <p>Contributions to the Harvard College Fund are available to the College right away. Unlike endowment funds, which are often committed to specific purposes and distributed gradually over time, the Fund can be spent in the year it is given.</p>
         <p>That means it can respond directly to what undergraduates need as those needs arise, rather than only to what a gift was earmarked for decades earlier.</p>
       </div>
       <div class="stat-pair">
         <div class="stat">
-          <span class="num">~70%</span>
+          <span class="num">70%</span>
           <span class="lbl">of HCF gifts are under $1,000. Impact is built by many people giving something, not a few giving a lot.</span>
         </div>
         <div class="stat">
-          <span class="num">~22&times;</span>
+          <span class="num">22&times;</span>
           <span class="lbl">the near-term impact of an endowment dollar, because HCF dollars are flexible and immediately usable.</span>
         </div>
       </div>
@@ -585,6 +621,7 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
   <div class="wrap">
     <div class="built-head">
       <h2>What a century of giving has built.</h2>
+      <p class="built-lead">Each of these is an area the Fund supports, not a line item any single gift paid for. Contributions arrive without a designated purpose, so the College directs them to where they are needed that year. That is what makes the list this long.</p>
     </div>
     <ul class="built-list">
         <li><a class="built-item" href="https://college.harvard.edu/financial-aid"><span class="bi-name">Financial Aid</span><span class="bi-desc">Decades of HCF-funded expansion built toward today&rsquo;s standard: every admitted Harvard College student can graduate without debt, regardless of what their family can pay.</span><span class="bi-arrow" aria-hidden="true">&rarr;</span></a></li>
@@ -597,6 +634,12 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
         <li><a class="built-item" href="https://gened.college.harvard.edu"><span class="bi-name">General Education</span><span class="bi-desc">Every student takes four Gen Ed courses connecting a discipline to the questions they&rsquo;ll carry beyond Harvard: coursework built to keep adapting as the world does.</span><span class="bi-arrow" aria-hidden="true">&rarr;</span></a></li>
         <li><a class="built-item" href="https://alumni.harvard.edu/college/seniors"><span class="bi-name">Senior Week Events</span><span class="bi-desc">The stretch between last exams and Commencement, when the graduating class gathers one final time, the send-off before a lifetime in the alumni community.</span><span class="bi-arrow" aria-hidden="true">&rarr;</span></a></li>
       </ul>
+      <div class="made-possible">
+        <p class="mp-eyebrow">Made Possible</p>
+        <h3>The list is the College’s. The story is yours.</h3>
+        <p>Most students can describe everything on this page without knowing the Fund paid for any of it. Your Harvard Wrapped turns these areas into a personal account: the pre-orientation trip, the House, the lab, the grant, named back to you at the end of four years.</p>
+        <a class="mp-link" href="https://katie2027.github.io/made-possible/wrapped/">See Your Harvard Wrapped &rarr;</a>
+      </div>
   </div>
 </div>
 
@@ -728,48 +771,12 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
         </button>
       </div>
     </div>
-    <div class="events-rail">
-      <div class="event-card">
-        <div class="when">Friday, June 4, 2027</div>
-        <div class="body">
-          <h3>Harvard Alumni Day</h3>
-          <p>An annual campus-wide celebration of alumni impact and citizenship, livestreamed for anyone who can&rsquo;t make it back to Cambridge.</p>
-          <a class="more" href="https://alumni.harvard.edu/programs-events/featured-programs">Details &rarr;</a>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="when">Every 5 years</div>
-        <div class="body">
-          <h3>Class Reunions &amp; Reunion Giving</h3>
-          <p>Reunion classes set a collective gift goal alongside a weekend back on campus, giving and celebrating side by side.</p>
-          <a class="more" href="https://alumni.harvard.edu/reunions/register">Details &rarr;</a>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="when">Ongoing</div>
-        <div class="body">
-          <h3>Volunteer Fundraising Kickoffs</h3>
-          <p>Class Committees and Class Marshals gather throughout the year to plan outreach and set the pace for their class&rsquo;s giving.</p>
-          <a class="more" href="https://alumni.harvard.edu/college/volunteer-fundraising">Details &rarr;</a>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="when">Annually</div>
-        <div class="body">
-          <h3>1636 Loyalty Society Recognition</h3>
-          <p>A yearly moment to thank donors who&rsquo;ve given to Harvard for three or more consecutive years. The Fund counts loyalty as much as the size of a gift.</p>
-          <a class="more" href="https://alumni.harvard.edu/college/college-giving/hcf/giving-recognition">Details &rarr;</a>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="when">Each fall</div>
-        <div class="body">
-          <h3>Global Networking Night</h3>
-          <p>Location-based alumni events held in cities worldwide, a chance to meet the community your gift helps sustain.</p>
-          <a class="more" href="https://alumni.harvard.edu/programs-events/featured-programs">Details &rarr;</a>
-        </div>
-      </div>
+    <div class="events-toggle" role="tablist" aria-label="Which set of events to show">
+      <button type="button" role="tab" id="evtTabHcf" aria-selected="true" aria-controls="eventsRail" data-events="hcf">Harvard College Fund</button>
+      <button type="button" role="tab" id="evtTabProposed" aria-selected="false" aria-controls="eventsRail" data-events="proposed">Proposed for 2026&ndash;27</button>
     </div>
+    <p class="events-note" id="eventsNote"></p>
+    <div class="events-rail" id="eventsRail" role="tabpanel" aria-labelledby="evtTabHcf"></div>
   </div>
 </section>
 
@@ -1066,6 +1073,110 @@ var QUOTES = [
     else if (e.key === "ArrowLeft") move(-1);
     else if (e.key === "ArrowRight") move(1);
   });
+})();
+
+/* ============================================================================
+   EVENTS DATA -- this is the only place to edit the events rail.
+   To add, change or remove an event, edit the arrays below. Nothing else
+   needs to change: the cards are drawn from this data every time the page
+   loads, and the toggle above the rail switches between the two sets.
+
+   Each event takes four fields:
+     when  -- the date or cadence shown in the crimson bar
+     title -- the event name
+     body  -- one or two sentences
+     href  -- where "Details" points
+
+   Order in the array is the order on the rail.
+   ============================================================================ */
+var EVENT_SETS = {
+  hcf: {
+    note: "Run by the Harvard College Fund and the Harvard Alumni Association.",
+    items: [
+      { when: "Friday, June 4, 2027", title: "Harvard Alumni Day",
+        body: "An annual campus-wide celebration of alumni impact and citizenship, livestreamed for anyone who can\u2019t make it back to Cambridge.",
+        href: "https://alumni.harvard.edu/programs-events/featured-programs" },
+      { when: "Every 5 years", title: "Class Reunions &amp; Reunion Giving",
+        body: "Reunion classes set a collective gift goal alongside a weekend back on campus, giving and celebrating side by side.",
+        href: "https://alumni.harvard.edu/reunions/register" },
+      { when: "Ongoing", title: "Volunteer Fundraising Kickoffs",
+        body: "Class Committees and Class Marshals gather throughout the year to plan outreach and set the pace for their class\u2019s giving.",
+        href: "https://alumni.harvard.edu/college/volunteer-fundraising" },
+      { when: "Annually", title: "1636 Loyalty Society Recognition",
+        body: "A yearly moment to thank donors who\u2019ve given to Harvard for three or more consecutive years. The Fund counts loyalty as much as the size of a gift.",
+        href: "https://alumni.harvard.edu/college/college-giving/hcf/giving-recognition" },
+      { when: "Each fall", title: "Global Networking Night",
+        body: "Location-based alumni events held in cities worldwide, a chance to meet the community your gift helps sustain.",
+        href: "https://alumni.harvard.edu/programs-events/featured-programs" }
+    ]
+  },
+  proposed: {
+    note: "Proposed in the Made Possible strategy for the Class of 2027. Each one depends on a partner: House Committees, pre-orientation boards, the HUA, the Houses.",
+    items: [
+      { when: "Late September 2026", title: "Baseline the three questions",
+        body: "Intercepts in Annenberg and the twelve House dining halls, taking the September reading of unaided attribution that the whole year is judged against.",
+        href: "https://katie2027.github.io/made-possible/" },
+      { when: "October 2026", title: "One hundred years of Made Possible",
+        body: "The Fund\u2019s centennial, hosted inside a House with House Committees and Faculty Deans.",
+        href: "https://katie2027.github.io/made-possible/" },
+      { when: "October 2026", title: "Closed test with 30 seniors",
+        body: "Across all twelve Houses, with the thirteen House Representatives, watching where testers quit.",
+        href: "https://katie2027.github.io/made-possible/wrapped/" },
+      { when: "February 2027", title: "Tags live, Wrapped opens to seniors",
+        body: "Credit lines in packets and Brain Break emails, released down House lists with the pre-orientation boards.",
+        href: "https://katie2027.github.io/made-possible/wrapped/" },
+      { when: "March 2027", title: "Housing Day",
+        body: "The day House affinity is loudest, with House Committees, Faculty Deans and the Dean of Students Office.",
+        href: "https://katie2027.github.io/made-possible/" },
+      { when: "April 2027", title: "Yardfest, and the one ask",
+        body: "Wrapped opens College-wide, the opt-in digest ships, and the $2,027 class ask goes out once.",
+        href: "https://katie2027.github.io/made-possible/" },
+      { when: "May 27, 2027", title: "Commencement",
+        body: "A Wrapped kiosk and a thank-you card, not an ask, with the Program Marshals whose week this is.",
+        href: "https://katie2027.github.io/made-possible/wrapped/" }
+    ]
+  }
+};
+
+(function(){
+  var rail = document.getElementById("eventsRail");
+  var note = document.getElementById("eventsNote");
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".events-toggle [data-events]"));
+  if (!rail || !tabs.length) return;
+
+  function render(key){
+    var set = EVENT_SETS[key];
+    if (!set) return;
+    note.textContent = set.note;
+    rail.innerHTML = set.items.map(function(e){
+      return '<div class="event-card">' +
+               '<div class="when">' + e.when + '</div>' +
+               '<div class="body">' +
+                 '<h3>' + e.title + '</h3>' +
+                 '<p>' + e.body + '</p>' +
+                 '<a class="more" href="' + e.href + '">Details &rarr;</a>' +
+               '</div>' +
+             '</div>';
+    }).join("");
+    rail.scrollLeft = 0;
+    tabs.forEach(function(t){
+      var on = t.getAttribute("data-events") === key;
+      t.setAttribute("aria-selected", String(on));
+    });
+    rail.setAttribute("aria-labelledby", key === "hcf" ? "evtTabHcf" : "evtTabProposed");
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){ render(t.getAttribute("data-events")); });
+    t.addEventListener("keydown", function(e){
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      var i = tabs.indexOf(t), n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      n.focus(); render(n.getAttribute("data-events"));
+    });
+  });
+
+  render("hcf");
 })();
 
 document.querySelectorAll("[data-scroll]").forEach(function(btn){
