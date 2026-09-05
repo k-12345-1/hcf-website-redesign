@@ -501,9 +501,11 @@ footer{background:#4A4A48;color:rgba(255,255,255,.82);}
 .built-lead{margin:.9rem 0 0;font-size:1.02rem;line-height:1.6;color:var(--ink);max-width:60rem;}
 
 
-/* tighter handoff from the quote carousel into the closing note */
-.band-quotes{padding-bottom:2.5rem;}
-.band-closing{padding-top:2.5rem;}
+/* built, decades, quotes and closing all sit on white, so consecutive ones
+   get a hairline to mark the boundary the background cannot. */
+.band-decades,.band-quotes,.band-closing{border-top:1px solid var(--rule);}
+.band-quotes{padding-bottom:4rem;}
+.band-closing{padding-top:4rem;}
 
 .evt-tag{
   display:inline-block;margin-left:.5rem;padding:.1rem .45rem;
