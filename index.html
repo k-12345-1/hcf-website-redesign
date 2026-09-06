@@ -143,6 +143,8 @@ a{color:inherit;}
 }
 .side-nav .current:hover{color:var(--crimson-deep);}
 .side-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.15rem;}
+/* display:flex on the list outranks the UA [hidden] rule, so restore it explicitly */
+.side-nav ul[hidden]{display:none;}
 .side-nav li a{
   display:block;padding:.6rem .85rem;border-radius:4px;
   color:var(--ink);text-decoration:none;line-height:1.35;
